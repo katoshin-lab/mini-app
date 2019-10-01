@@ -37,7 +37,6 @@ has_many :reviews
 ## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
 |text|text||
 |image|string||
 |user_id|reference|null: false, foreign_key: true|
