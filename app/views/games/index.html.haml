@@ -1,1 +1,14 @@
-%div Hello, World!
+.wrapper 
+  .header
+    .header__contents
+      - if user_signed_in?
+        .header__contents--edit Edit Account
+        = link_to edit_user_path(current_user)
+        .header__contents--logout Log out
+      - else
+        .header__contents--login Log in
+        .header__contents--signup Sign up
+  .start
+    .start__video
+      %video 
+  .main
