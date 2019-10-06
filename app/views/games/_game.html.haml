@@ -1,0 +1,7 @@
+.main__box
+  = image_tag("#{game.image}", class: "main__box__image")
+  .main__box__info
+    .main__box__info__title
+      = link_to "#{game.title}", game_path(game.id), class: "main__box__info__title--link"
+    .main__box__info__reviewer 
+      = game.user.name
