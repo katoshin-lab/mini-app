@@ -1,6 +1,6 @@
 .main {
   height: 105vh;
-  background-color: #c9c9c9;
+  background-color: #dddddd;
   margin-top: 3vh;
   padding: 0 5%;
   padding-top: 80px;
@@ -40,12 +40,17 @@
         position: absolute;
         bottom: 30%;
         text-align: right;
+
+        &--link {
+          color: black;
+          text-shadow: 2px 2px 2px gray;
+        }
       }
       &__reviewer {
         display: inline-block;
         width: 100%;
         padding-right: 10%;
-        font-size: 12px;
+        font-size: 14px;
         color: gray;
         position: absolute;
         bottom: 15%;

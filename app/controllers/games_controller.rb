@@ -13,12 +13,21 @@ class GamesController < ApplicationController
   end
 
   def edit
+    @game = Game.find(params[:id])
   end
 
   def update
+    game = Game.find(params[:id])
+    game.update(game_params) if current_user.id == game.user_id
   end
 
   def show
+    @game = Game.find(params[:id])
+  end
+
+  def destroy
+    game = Game.find(params[:id])
+    game.destroy if current_user.id == game.user_id
   end
 
   private

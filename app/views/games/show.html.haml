@@ -1,0 +1,13 @@
+.content
+  .content__above
+    .content__above--title= @game.title
+    - if user_signed_in? && current_user.id == @game.user_id
+      .content__above--title--edit
+        = link_to "編集", edit_game_path, class: "content__above--title--edit--text"
+      .content__above--title--delete
+        = link_to "削除", game_path, method: "delete", class: "content__above--title--delete--text"
+  = image_tag("#{@game.image}", class: "content__image")
+  .content__below
+    .content__below__text= @game.content
+    .content__below--top
+      = link_to "トップへ", root_path, class: "content__below--top--text"

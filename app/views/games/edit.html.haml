@@ -1,0 +1,19 @@
+.container
+  .container__text ゲームの情報に変更が必要ですか？
+  = form_for @game, :html => { method: "patch", class: "container__form"} do |f|
+    .container__form__title
+      .container__form__title__up
+        = f.label "タイトル", class: "container__form__title__up__text"
+      .container__form__title__down
+        = f.text_field :title, class: "container__form__title__down__input"
+    .container__form__content
+      .container__form__content__up
+        = f.label "ゲームの内容、レビュー", class: "container__form__content__up__text"
+      .container__form__content__down
+        = f.text_area :content, class: "container__form__content__down__input"
+    .container__form__image
+      .container__form__image__up
+        = f.label "イメージのURL", class: "container__form__image__up__text"
+      .container__form__image__down
+        = f.text_field :image, class: "container__form__image__down__input"
+    = f.submit "更新する", class: "container__form__submit"
