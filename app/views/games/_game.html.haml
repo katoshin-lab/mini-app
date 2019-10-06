@@ -1,0 +1,7 @@
+.main__box
+  = image_tag("#{game.image}", class: "main__box__image")
+  .main__box__info
+    .main__box__info__title 
+      = game.title
+    .main__box__info__reviewer 
+      = game.user.name

@@ -1,14 +1,24 @@
 .wrapper 
-  .header
-    .header__contents
-      - if user_signed_in?
-        .header__contents--edit Edit Account
-        = link_to edit_user_path(current_user)
-        .header__contents--logout Log out
-      - else
-        .header__contents--login Log in
-        .header__contents--signup Sign up
   .start
-    .start__video
-      %video 
-  .main
+    .start__box
+      = video_tag("overwatch.mp4", controls: false, autobuffer: true, autoplay: true, muted: true, loop: true, class: "start__box__video")
+    .start__box__welcome GetherGamersへようこそ  
+    .start__box__btn
+      = link_to "ゲーム一覧へ", { anchor: "main"}, class: "start__box__btn--text"
+    .start__header
+      .start__header__contents
+        - if user_signed_in?
+          .start__header__contents--btn
+            = link_to "Post Review", new_game_path, class: "start__header__contents--device--text"
+          .start__header__contents--btn
+            = link_to "Edit", edit_user_registration_path, class: "start__header__contents--device--text"
+          .start__header__contents--btn
+            = link_to "Log out", destroy_user_session_path, class: "start__header__contents--device--text"
+        - else
+          .start__header__contents--btn
+            = link_to "Log in", new_user_session_path, class: "start__header__contents--device--text"
+          .start__header__contents--btn
+            = link_to "Sign up", new_user_registration_path, class: "start__header__contents--device--text"
+  %section#main.main
+    - @games.each do |game|
+      = render partial: "game", locals: { game: game }
