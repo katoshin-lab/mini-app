@@ -10,4 +10,22 @@
   .content__below
     .content__below__text= @game.content
     .content__below--top
-      = link_to "トップへ", root_path, class: "content__below--top--text"
+      = link_to "トップへ戻る", root_path, class: "content__below--top--text"
+  .content__text リアクション一覧
+  .content__reviews
+    - @reviews.each do |review|
+      .content__reviews__review
+        .content__reviews__review--text
+          = review.text
+        .content__reviews__review--name 
+          = "reacted by #{review.user.name}"
+  - if user_signed_in?
+    = form_for @review, url: game_reviews_path(params[:id]), :html => {:class => "content__form"} do |f|
+      .content__form__box
+        = f.label "リアクションを投稿する", class: "content__form__box--label"
+        .content__form__box__input
+          = f.text_area :text, class: "content__form__box__input--text"
+          = f.submit "投稿する", class: "content__form__box__input--submit"
+
+
+
