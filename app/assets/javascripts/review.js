@@ -35,6 +35,7 @@ $(function() {
     })
     .always(function() {
       $(".content__form__box__input--submit").removeAttr("disabled");
+      $('.content').animate({scrollTop: $('.content')[0].scrollHeight}, 'slow');
     })
   })
 })
