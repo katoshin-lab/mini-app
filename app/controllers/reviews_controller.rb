@@ -1,8 +1,13 @@
 class ReviewsController < ApplicationController
 
   def create
-    @review = Review.new
-    Review.create(review_params)
+    @game = Game.find(params[:game_id])
+    @review = @game.reviews.new(review_params)
+    @review.save
+    respond_to do |format|
+      format.html { redirect_to game_path(params[:game_id]) }
+      format.json
+    end
   end
 
   private
