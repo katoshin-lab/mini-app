@@ -1,18 +1,16 @@
-# README
+# :video_game::space_invader: GatherGamers
+お気に入りのゲーム、おすすめしたいゲームを手軽に投稿したり、探せるサイトです。:video_game:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## :computer: 開発環境
+- ruby 2.5.1p57
+- Rails 5.0.7.2
+- 主なGem: ['jquery-rails', 'haml-rails', 'devise']
 
-Things you may want to cover:
+## :star2: 実装内容 ＆ ギャラリー
+### サイトの全体
+https://gyazo.com/baf8a1c4caf73e53921987cacd246d65
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-# mini-app db設計
+## mini-app db設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
