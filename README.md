@@ -1,5 +1,6 @@
 # :video_game::space_invader: GatherGamers
-お気に入りのゲーム、おすすめしたいゲームを手軽に投稿したり、探せるサイトです。:video_game:
+お気に入りのゲーム、おすすめしたいゲームを手軽に投稿したり、探せるサイトです。:video_game:  
+Railsとjquery(ajax)の勉強のため作成しました。
 
 ## :computer: 開発環境
 - ruby 2.5.1p57
@@ -9,6 +10,16 @@
 ## :star2: 実装内容 ＆ ギャラリー
 ### サイトの全体
 https://gyazo.com/baf8a1c4caf73e53921987cacd246d65
+- アカウント機能（サインアップ、ログイン、ログアウト、アカウント情報編集）
+- 投稿一覧
+- ゲームの投稿（要ログイン）
+
+### ゲーム詳細画面
+https://gyazo.com/c5822af94255154ad919fddce27e6f76
+- ゲーム詳細表示
+- コメントの表示
+- ゲームの投稿の削除（要ログイン、投稿者のみ）
+- ajaxによる非同期コメント送信（要ログイン）
 
 ## mini-app db設計
 ## usersテーブル
@@ -42,13 +53,3 @@ has_many :reviews
 ### Association
 belongs_to :user
 belongs_to :game
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
