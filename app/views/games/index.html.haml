@@ -1,8 +1,8 @@
 .wrapper 
   .start
     .start__box
-      = video_tag("overwatch.mp4", controls: false, autobuffer: true, autoplay: true, muted: true, loop: true, class: "start__box__video")
-    .start__box__welcome GetherGamersへようこそ  
+      %iframe(width="1440" height="900" src="https://www.youtube.com/embed/F3KNcS4vhFY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+    .start__box__welcome GetherGamersへようこそ
     .start__box__btn
       = link_to "ゲーム一覧へ", { anchor: "main"}, class: "start__box__btn--text"
     .start__header
