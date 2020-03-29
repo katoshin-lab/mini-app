@@ -53,3 +53,5 @@ has_many :reviews
 ### Association
 belongs_to :user
 belongs_to :game
+
+動画引用元：https://youtu.be/6T2Xy559BD8
